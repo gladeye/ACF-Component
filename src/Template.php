@@ -217,7 +217,9 @@ class Template {
                 'style' => 'seamless',
                 'hide_on_screen' => $hideContent ? ['the_content'] : [],
             ], $this->options);
-            acf_add_local_field_group($group);
+            add_action('acf/init', function() use($group) {
+                acf_add_local_field_group($group);
+            });
         }
 
         return $this;
