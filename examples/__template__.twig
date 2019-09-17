@@ -1,0 +1,7 @@
+{# An example default layout that loops over inline components and output views based on the component name#}
+{% extends 'layout.twig' %}
+{% block content %}
+    {% for component in components %}
+        {% include 'components/'~component.component~'.twig' with {component: component, data: fields[component.key]} %}
+    {% endfor %}
+{% endblock %}
