@@ -107,7 +107,7 @@ class Template {
     {
         $this->name = $name;
         $this->title = $title;
-        $this->location = $location;
+        $this->location = [[$location]];
         $this->options = $options;
         $this->wordpressTemplate = $wordpressTemplate;
 
