@@ -1,0 +1,20 @@
+{
+    "name": "kethatril/acf-component",
+    "type": "library",
+    "description": "A component library for Advanced Custom Fields",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Bonham",
+            "email": "daniel.bonham@gladeye.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kethatril\\ACFTemplate": "src/"
+        }
+    }
+}
