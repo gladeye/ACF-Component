@@ -24,9 +24,13 @@ class FlexibleComponent implements Component {
      * @var int
      */
     private $max;
+    /**
+     * @var array
+     */
+    private $options;
 
 
-    public function __construct(string $name, string $title, array $components, int $min = 0, int $max = 0)
+    public function __construct(string $name, string $title, array $components, int $min = 0, int $max = 0, array $options = [])
     {
 
         $this->name = $name;
@@ -34,6 +38,7 @@ class FlexibleComponent implements Component {
         $this->components = $components;
         $this->min = $min;
         $this->max = $max;
+        $this->options = options;
     }
 
     public function getFields() {
@@ -60,7 +65,14 @@ class FlexibleComponent implements Component {
 
             ];
         }
-        return [Template::createField('flexible_content', "flexible_{$this->name}", $this->name, $this->title, ['min' => $this->min, 'max' => $this->max, 'layouts' => $layouts])];
+        
+
+        $options = ['min' => $this->min, 'max' => $this->max, 'layouts' => $layouts];
+        if(is_array($this->options) && count($this->options) > 0){
+            $options = array_merge($options, $this->options);
+        }
+        
+        return [Template::createField('flexible_content', "flexible_{$this->name}", $this->name, $this->title, $options)];
     }
 
     public function getGroup() {
