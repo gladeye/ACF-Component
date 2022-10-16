@@ -38,7 +38,7 @@ class FlexibleComponent implements Component {
         $this->components = $components;
         $this->min = $min;
         $this->max = $max;
-        $this->options = options;
+        $this->options = $options;
     }
 
     public function getFields() {
