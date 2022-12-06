@@ -48,6 +48,8 @@ class FlexibleComponent implements Component {
                 'key' => "layout_{$this->name}_{$field['name']}",
                 'name' => $field['name'],
                 'label' => $field['title'],
+                'min' => isset($field['min']) ? $field['min'] : 0,
+                'max' => isset($field['max']) ? $field['max'] : 0, 
                 'display' => "block",
                 'sub_fields' => [
                     [
